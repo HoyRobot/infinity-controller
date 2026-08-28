@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
-<title>Infinity Robot Controller v3</title>
+<title>Infinity Robot Controller v4</title>
 <style>
 :root{--bg:#0b1220;--panel:#111827;--panel2:#172033;--line:#334155;--text:#f8fafc;--muted:#a8b3c7;--good:#16a34a;--warn:#b45309;--bad:#dc2626;--accent:#2563eb}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.96);padding:14px;border-bottom:1px solid var(--line)}h1{font-size:22px;margin:0 0 8px}.statusline{display:flex;gap:7px;flex-wrap:wrap}.badge{padding:6px 9px;border-radius:999px;background:#374151;font-size:12px}.badge.good{background:#14532d}.badge.warn{background:#713f12}.badge.bad{background:#7f1d1d}main{max-width:900px;margin:auto;padding:14px 14px 110px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}.card h2{font-size:18px;margin:0 0 12px}.card h3{font-size:15px;margin:14px 0 8px;color:#dbeafe}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media(max-width:620px){.grid2,.grid3{grid-template-columns:1fr}}label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}select,input{width:100%;font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px}button{font:inherit;font-weight:700;color:white;border:0;border-radius:12px;padding:12px 15px;background:var(--accent);min-height:46px}button:active{transform:translateY(1px)}button.secondary{background:#475569}button.good{background:var(--good)}button.warn{background:var(--warn)}button.danger{background:var(--bad)}button:disabled{opacity:.45}button.small{min-height:36px;padding:8px 10px;font-size:13px}.tabs{display:flex;gap:8px;margin-bottom:12px}.tab{flex:1;background:#334155}.tab.active{background:var(--accent)}.tablewrap{background:#123524;border-radius:14px;padding:12px;border:2px solid #e5e7eb}.net{height:7px;background:#e5e7eb;border-radius:4px;margin-bottom:8px}.targetgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.cell{aspect-ratio:1.35/1;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.28);border-radius:9px;color:white;display:flex;align-items:center;justify-content:center;position:relative;font-weight:800;min-height:52px}.cell.selected{background:#2563eb;border-color:#93c5fd}.cell.invalid{background:rgba(127,29,29,.45);border-color:#ef4444;color:#fecaca}.cell .order{position:absolute;right:4px;top:3px;background:white;color:#111827;border-radius:999px;min-width:20px;height:20px;padding:0 5px;font-size:11px;display:flex;align-items:center;justify-content:center}.playerlabel{text-align:center;color:#d1fae5;font-size:12px;margin-top:8px}.help{font-size:13px;line-height:1.45;color:var(--muted)}.notice{border-left:4px solid #f59e0b;background:#422006;padding:10px 12px;border-radius:8px;font-size:13px;line-height:1.4}.notice.success{border-left-color:var(--good);background:#052e16}.notice.error{border-left-color:var(--bad);background:#450a0a}.log{height:210px;overflow:auto;background:#030712;border:1px solid var(--line);border-radius:10px;padding:10px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;color:#cbd5e1}.bottom{position:fixed;z-index:20;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,18,32,.96);border-top:1px solid var(--line)}.bottom .inner{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.bottom button{font-size:18px;min-height:58px}.step{border:1px solid var(--line);border-radius:12px;padding:10px;margin:10px 0;background:#0f172a}.stephead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.step-title{font-weight:800}.mini-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:8px}.mini-cell{padding:7px 3px;min-height:36px;border-radius:7px;background:#334155;font-size:12px}.mini-cell.selected{background:var(--accent)}.mini-cell.invalid{background:#7f1d1d}.hidden{display:none!important}details summary{cursor:pointer;font-weight:700}.source-note{font-size:11px;color:#94a3b8;margin-top:10px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.96);padding:14px;border-bottom:1px solid var(--line)}h1{font-size:22px;margin:0 0 8px}.statusline{display:flex;gap:7px;flex-wrap:wrap}.badge{padding:6px 9px;border-radius:999px;background:#374151;font-size:12px}.badge.good{background:#14532d}.badge.warn{background:#713f12}.badge.bad{background:#7f1d1d}main{max-width:900px;margin:auto;padding:14px 14px 110px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}.card h2{font-size:18px;margin:0 0 12px}.card h3{font-size:15px;margin:14px 0 8px;color:#dbeafe}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media(max-width:620px){.grid2,.grid3{grid-template-columns:1fr}}label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}select,input{width:100%;font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px}button{font:inherit;font-weight:700;color:white;border:0;border-radius:12px;padding:12px 15px;background:var(--accent);min-height:46px}button:active{transform:translateY(1px)}button.secondary{background:#475569}button.good{background:var(--good)}button.warn{background:var(--warn)}button.danger{background:var(--bad)}button:disabled{opacity:.45}button.small{min-height:36px;padding:8px 10px;font-size:13px}.tabs{display:flex;gap:8px;margin-bottom:12px}.tab{flex:1;background:#334155}.tab.active{background:var(--accent)}.tablewrap{background:#123524;border-radius:14px;padding:12px;border:2px solid #e5e7eb}.net{height:7px;background:#e5e7eb;border-radius:4px;margin-bottom:8px}.targetgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.cell{aspect-ratio:1.35/1;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.28);border-radius:9px;color:white;display:flex;align-items:center;justify-content:center;position:relative;font-weight:800;min-height:52px}.cell.selected{background:#2563eb;border-color:#93c5fd}.cell.invalid{background:rgba(127,29,29,.34);border-color:#ef4444;color:#fecaca;opacity:.58}.cell:disabled,.mini-cell:disabled{cursor:not-allowed;transform:none}.cell .order{position:absolute;right:4px;top:3px;background:white;color:#111827;border-radius:999px;min-width:20px;height:20px;padding:0 5px;font-size:11px;display:flex;align-items:center;justify-content:center}.playerlabel{text-align:center;color:#d1fae5;font-size:12px;margin-top:8px}.help{font-size:13px;line-height:1.45;color:var(--muted)}.notice{border-left:4px solid #f59e0b;background:#422006;padding:10px 12px;border-radius:8px;font-size:13px;line-height:1.4}.notice.success{border-left-color:var(--good);background:#052e16}.notice.error{border-left-color:var(--bad);background:#450a0a}.log{height:210px;overflow:auto;background:#030712;border:1px solid var(--line);border-radius:10px;padding:10px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;color:#cbd5e1}.bottom{position:fixed;z-index:20;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,18,32,.96);border-top:1px solid var(--line)}.bottom .inner{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.bottom button{font-size:18px;min-height:58px}.step{border:1px solid var(--line);border-radius:12px;padding:10px;margin:10px 0;background:#0f172a}.stephead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.step-title{font-weight:800}.mini-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:8px}.mini-cell{padding:7px 3px;min-height:36px;border-radius:7px;background:#334155;font-size:12px}.mini-cell.selected{background:var(--accent)}.mini-cell.invalid{background:#7f1d1d;opacity:.55}.hidden{display:none!important}details summary{cursor:pointer;font-weight:700}.source-note{font-size:11px;color:#94a3b8;margin-top:10px}
 </style>
 </head>
 <body>
 <header>
-  <h1>Infinity Robot Controller <span style="font-size:12px;color:#94a3b8">v3</span></h1>
+  <h1>Infinity Robot Controller <span style="font-size:12px;color:#94a3b8">v4</span></h1>
   <div class="statusline">
     <span id="btBadge" class="badge bad">Bluetooth: not connected</span>
     <span id="serviceBadge" class="badge">Service: —</span>
     <span id="writerBadge" class="badge">Writer: —</span>
+    <span id="firmwareBadge" class="badge">Firmware: —</span>
     <span id="configBadge" class="badge warn">Motor table: loading…</span>
   </div>
 </header>
@@ -44,21 +45,22 @@
     <div class="grid3" style="margin-top:10px">
       <div><label>Placement mode</label><select id="modeSel"><option value="single">Single target</option><option value="sequence">Sequence</option><option value="random">Random among selected</option></select></div>
       <div><label>Ball interval (1 fast – 20 slow)</label><input id="timeRange" type="range" min="1" max="20" value="8"><div class="help">Value: <span id="timeValue">8</span></div></div>
-      <div><label>Repeats / cycles</label><input id="repeatInput" type="number" min="1" max="255" value="20"></div>
+      <div><label>Number of balls (1–200)</label><input id="ballCountInput" type="number" min="1" max="200" value="20"><div class="help">Single = exact count. Sequence = selected targets in order. Random = selected targets unpredictably. Sequence/Random may round up to finish a full cycle.</div></div>
     </div>
     <h3>Tap where you want the ball to land</h3>
     <div class="tablewrap"><div class="net"></div><div id="targetGrid" class="targetgrid"></div><div class="playerlabel">PLAYER SIDE</div></div>
-    <p id="selectionHelp" class="help">Single target: choose one square.</p>
+    <p id="selectionHelp" class="help">Single target: choose one square.</p><div id="ballNote" class="notice hidden" style="margin-top:8px"></div>
   </div>
   <div id="advancedPane" class="hidden">
-    <p class="help">Build a multi-ball routine. Each step can use one fixed target or up to five possible targets.</p>
+    <p class="help">Build a multi-ball routine. Advanced remains experimental; first validate Basic Single, Sequence, and Random.</p>
     <div class="grid2">
-      <div><label>Whole routine repeat count</label><input id="advRepeat" type="number" min="1" max="255" value="10"></div>
+      <div><label>Whole routine repeat count (1–50)</label><input id="advRepeat" type="number" min="1" max="50" value="10"></div>
       <div><label>Step order</label><select id="advOrder"><option value="fixed">Fixed order</option><option value="random">Shuffle selected steps</option></select></div>
     </div>
     <div id="steps"></div><button id="addStepBtn" class="secondary">+ Add Ball Step</button>
   </div>
   <div class="row" style="margin-top:14px"><button id="testBtn" class="warn" disabled>Test One Ball</button><button id="startBtn" class="good" disabled>Start Training</button></div>
+  <div id="patternSummary" class="notice hidden" style="margin-top:10px"></div>
   <div id="validationMsg" class="notice hidden" style="margin-top:10px"></div>
 </section>
 
@@ -71,18 +73,19 @@
 <section class="card">
 <details>
   <summary>Connection / protocol diagnostics</summary>
-  <div class="grid3" style="margin-top:12px">
-    <div><label>Pattern command</label><select id="opcodeMode"><option value="01">Standard 0x01 (recommended)</option><option value="98">Alternate 0x98 (try only if 0x01 connects but will not fire)</option></select></div>
-    <div><label>FEE7 write channel</label><select id="writerMode"><option value="auto">Auto (FEC7 first)</option><option value="fec7">Force FEC7</option><option value="fec8">Force FEC8</option><option value="fed5">Force FED5</option></select></div>
+  <div class="grid2" style="margin-top:12px">
+    <div><label>Pattern command</label><select id="opcodeMode"><option value="01">Standard 0x01 (default)</option><option value="98">Alternate 0x98 (compatibility test)</option></select></div>
+    <div><label>BLE transport</label><select id="transportMode"><option value="tablebot10">TableBot current: 10-byte chunks / 30 ms</option><option value="capture20">Protocol capture: 20-byte chunks / 5 ms</option></select></div>
+    <div><label>FEE7 write channel</label><select id="writerMode"><option value="auto">Auto (FEC7 first)</option><option value="fec7">Force FEC7</option><option value="fed5">Force FED5</option></select></div>
     <div><label>Motor table</label><button id="reloadConfigBtn" class="secondary small">Reload / Cache Motor Table</button></div>
   </div>
-  <div class="row" style="margin-top:10px"><button id="handshakeBtn" class="secondary small" disabled>Handshake</button><button id="preBtn" class="secondary small" disabled>Send PRE</button><button id="clearLogBtn" class="secondary small">Clear Log</button></div>
+  <div class="row" style="margin-top:10px"><button id="handshakeBtn" class="secondary small" disabled>Handshake</button><button id="preBtn" class="secondary small" disabled>Send PRE</button><button id="copyLogBtn" class="secondary small">Copy Diagnostics</button><button id="clearLogBtn" class="secondary small">Clear Log</button></div>
   <h3>Event log</h3><div id="log" class="log"></div>
-  <p class="source-note">Built from current Pinfinity Web Bluetooth research and current TableBot protocol/firmware research. Version 3 uses the documented JOOLA frame, CRC-CCITT, FFE0/FEE7 service support, 20-byte BLE chunks, conservative inter-chunk delay, 0x05 info/idle preparation, 0x04 PRE, 0x01 standard PATTERN, 0x03 live STOP, and the TableBot community motor table.</p>
+  <p class="source-note">Built from current Pinfinity Web Bluetooth research and current TableBot protocol/firmware research. Version 4 keeps the working v3 foundation but matches the current TableBot basic encoder and start/transport path more closely: 10-byte BLE chunks with 30 ms spacing by default; handshake before version query; 0x05 payload 00 idle stop; 500 ms STOP/PRE timing; 0x04 PRE; 0x01 PATTERN; 0x03 live STOP; fixed Sequence points; basic whole-drill Random flags; and the 465-entry community motor table. Alternate 0x98 and 20-byte transport remain available only as compatibility tests.</p>
 </details>
 </section>
 
-<section class="card"><h2>First-use safety</h2><div class="notice">Keep access to the robot's physical power switch during the first live test. This page is based on working community protocol research, but your exact Bluefy + iPhone + robot firmware combination is not proven until your first connection.</div></section>
+<section class="card"><h2>First-use safety</h2><div class="notice">Keep access to the robot's physical power switch during the first live test. This page is based on working community protocol research, but your exact robot firmware can still require compatibility tuning. Start with Normal / Topspin / Medium and a center target before calibrating serves.</div></section>
 </main>
 <div class="bottom"><div class="inner"><button id="quickStartBtn" class="good" disabled>▶ START</button><button id="stopBtn" class="danger" disabled>■ STOP</button></div></div>
 
@@ -102,25 +105,26 @@ const MOTOR_TABLE_URLS=[
   "https://raw.githubusercontent.com/Hajto/table_tennis_robot_app/main/app/src/main/assets/base-conf.json",
   "https://cdn.jsdelivr.net/gh/Hajto/table_tennis_robot_app@main/app/src/main/assets/base-conf.json"
 ];
-const MOTOR_CACHE_KEY="infinityMotorTableV3";
+const MOTOR_CACHE_KEY="infinityMotorTableV4";
 const BALLS=[{v:0,n:"Serve"},{v:1,n:"Normal"},{v:2,n:"Lob"}];
 const SPINS=[{v:0,n:"Max Topspin"},{v:1,n:"Topspin"},{v:2,n:"Float"},{v:3,n:"Backspin"},{v:4,n:"Max Backspin"}];
 const POWERS=[{v:0,n:"Extreme"},{v:1,n:"Strong"},{v:2,n:"Medium"},{v:3,n:"Light"}];
 
 let device=null,server=null,service=null,serviceVariant=null,deviceId=null,firmware=null;
 let writeCandidates=[],writeChar=null,notifyChars=[],rxBuffers=new Map();
-let motorTable=[],basicSelection=[],activeTab="basic",advSteps=[],running=false,awaitingPatternAck=false,keepaliveTimer=null;
-let stepSeq=1;
+let motorTable=[],basicSelection=[8],activeTab="basic",advSteps=[],running=false,awaitingPatternAck=false,keepaliveTimer=null;
+let stepSeq=1,finishing=false,lastBuildMeta=null;
 
 const $=id=>document.getElementById(id);
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const shortUuid=u=>(u||"").toLowerCase().replace("0000","").split("-")[0].toUpperCase();
 function log(msg){const t=new Date().toLocaleTimeString();$("log").textContent+=`[${t}] ${msg}\n`;$("log").scrollTop=$("log").scrollHeight;}
 function hex(bytes){return Array.from(bytes).map(b=>b.toString(16).padStart(2,"0")).join(" ");}
-  function setNotice(text,kind="warn"){const el=$("validationMsg");if(!text){el.className="notice hidden";el.textContent="";return;}el.className="notice "+(kind==="error"?"error":kind==="success"?"success":"");el.textContent=text;}
-function setConnectedUI(on){$("btBadge").textContent=on?`Bluetooth: ${device?.name||"connected"}`:"Bluetooth: not connected";$("btBadge").className="badge "+(on?"good":"bad");["disconnectBtn","infoBtn","handshakeBtn","preBtn","startBtn","quickStartBtn","stopBtn"].forEach(id=>$(id).disabled=!on);$("testBtn").disabled=!on||activeTab!=="basic";}
+function setNotice(text,kind="warn"){const el=$("validationMsg");if(!text){el.className="notice hidden";el.textContent="";return;}el.className="notice "+(kind==="error"?"error":kind==="success"?"success":"");el.textContent=text;}
+  function setConnectedUI(on){$("btBadge").textContent=on?`Bluetooth: ${device?.name||"connected"}`:"Bluetooth: not connected";$("btBadge").className="badge "+(on?"good":"bad");["disconnectBtn","infoBtn","handshakeBtn","preBtn","startBtn","quickStartBtn","stopBtn"].forEach(id=>$(id).disabled=!on);$("testBtn").disabled=!on||activeTab!=="basic";}
 function fillSelect(id,arr){const s=$(id);s.innerHTML="";for(const o of arr){const op=document.createElement("option");op.value=o.v;op.textContent=o.n;s.appendChild(op);}}
 fillSelect("ballSel",BALLS);fillSelect("spinSel",SPINS);fillSelect("powerSel",POWERS);
+$("ballSel").value="1";$("spinSel").value="1";$("powerSel").value="2";
 
 (function checkEnvironment(){
   if(location.protocol!=="https:"&&location.hostname!=="localhost"){$("browserNote").classList.remove("hidden");$("browserNote").classList.add("error");$("browserNote").textContent="This controller should be served over HTTPS (GitHub Pages is fine).";}
@@ -139,7 +143,8 @@ async function writeChunkTo(char,chunk){
   if(typeof char.writeValue==="function"){try{return await char.writeValue(chunk);}catch(e){lastErr=e;}}
   throw lastErr||new Error("Characteristic has no usable write method");
 }
-async function writeFrameTo(char,frame){for(let i=0;i<frame.length;i+=20){await writeChunkTo(char,frame.slice(i,i+20));await sleep(30);}}
+function transportSettings(){return $("transportMode")?.value==="capture20"?{chunk:20,delay:5,label:"20B/5ms"}:{chunk:10,delay:30,label:"10B/30ms"};}
+async function writeFrameTo(char,frame){const t=transportSettings();for(let i=0;i<frame.length;i+=t.chunk){await writeChunkTo(char,frame.slice(i,i+t.chunk));await sleep(t.delay);}}
 function orderedWriters(){
   if(!writeCandidates.length)return[];
   if(serviceVariant==="alt"){const mode=$("writerMode")?.value||"auto";if(mode!=="auto"){const forced=writeCandidates.find(c=>shortUuid(c.uuid).toLowerCase()===mode);if(forced)return[forced,...writeCandidates.filter(c=>c!==forced)];}}
@@ -173,13 +178,20 @@ function parseRx(key){
   }
   rxBuffers.set(key,buf);
 }
+async function finishAfterCompletion(cmd,ph){
+  if(finishing)return;finishing=true;running=false;awaitingPatternAck=false;stopKeepalive();
+  log(`Robot completion/status 0x${cmd.toString(16)} (${ph})`);
+  try{await send(0x03,[0x00]);await sleep(1000);await send(0x89,[0x00]);log("Post-pattern cleanup + re-handshake complete");}
+  catch(e){log("Completion cleanup warning: "+e.message);}
+  finally{finishing=false;}
+}
 function handleResponse(cmd,payload){
   const ph=hex(payload);
-  if(cmd===0x85&&payload.length>=4){firmware=`${payload[0]}.${payload[1]}.${payload[2]}.${payload[3]}`;log("Firmware: "+firmware);return;}
+  if(cmd===0x85&&payload.length>=4){firmware=`${payload[0]}${payload[1]}.${payload[2]}${payload[3]}`;$("firmwareBadge").textContent="Firmware: "+firmware;$("firmwareBadge").className="badge good";log("Firmware: "+firmware);return;}
   if(cmd===0x83){running=false;awaitingPatternAck=false;stopKeepalive();log("STOP/control acknowledged ("+ph+")");return;}
   if(cmd===0x84){log("PRE acknowledged ("+ph+")");return;}
   if(cmd===0x81){if(awaitingPatternAck){running=true;awaitingPatternAck=false;log("Pattern acknowledged / robot running");}else{log("Connect/status acknowledgement (0x81)");}return;}
-  if(cmd===0x82||cmd===0x8f){if(running){running=false;stopKeepalive();}log(`Robot completion/status 0x${cmd.toString(16)} (${ph})`);return;}
+  if(cmd===0x82||cmd===0x8f){finishAfterCompletion(cmd,ph);return;}
   log(`Robot response 0x${cmd.toString(16)} (${ph})`);
 }
 
@@ -195,11 +207,12 @@ async function enableNotifications(chars){
 async function setupLegacy(){
   service=await server.getPrimaryService(UUIDS.legacyService);const ffe1=await service.getCharacteristic(UUIDS.legacyChar);serviceVariant="legacy";writeCandidates=[ffe1];writeChar=ffe1;await enableNotifications([ffe1]);
 }
+function charWritable(c){const p=c?.properties||{};return !!c&&(!!p.writeWithoutResponse||!!p.write);}
 async function setupAlt(){
   service=await server.getPrimaryService(UUIDS.altService);const [fec7,fec8,fed5,fed6]=await Promise.all([safeGetChar(service,UUIDS.fec7),safeGetChar(service,UUIDS.fec8),safeGetChar(service,UUIDS.fed5),safeGetChar(service,UUIDS.fed6)]);serviceVariant="alt";
-  writeCandidates=[fec7,fec8,fed5].filter(Boolean);writeChar=writeCandidates[0]||null;await enableNotifications([fec8,fed6,fec7]);if(!writeCandidates.length)throw new Error("FEE7 service found but no known command characteristic was found");
+  writeCandidates=[fec7,fed5,fec8].filter(charWritable);writeChar=writeCandidates[0]||null;await enableNotifications([fec8,fed6]);if(!writeCandidates.length)throw new Error("FEE7 service found but no writable command characteristic was found");
 }
-function disconnected(){log("Robot disconnected");stopKeepalive();running=false;awaitingPatternAck=false;server=null;service=null;writeCandidates=[];writeChar=null;notifyChars=[];rxBuffers.clear();setConnectedUI(false);$("serviceBadge").textContent="Service: —";$("serviceBadge").className="badge";$("writerBadge").textContent="Writer: —";$("writerBadge").className="badge";}
+function disconnected(){log("Robot disconnected");stopKeepalive();running=false;awaitingPatternAck=false;server=null;service=null;writeCandidates=[];writeChar=null;notifyChars=[];rxBuffers.clear();setConnectedUI(false);$("serviceBadge").textContent="Service: —";$("serviceBadge").className="badge";$("writerBadge").textContent="Writer: —";$("writerBadge").className="badge";$("firmwareBadge").textContent="Firmware: —";$("firmwareBadge").className="badge";}
 async function connectRobot(){
   try{
     if(!navigator.bluetooth)throw new Error("Web Bluetooth is unavailable. Use Bluefy on iPhone/iPad.");
@@ -208,8 +221,10 @@ async function connectRobot(){
     server=await device.gatt.connect();log("GATT connected");
     try{await setupLegacy();}catch(e1){log("FFE0 setup unavailable: "+e1.message);await setupAlt();}
     $("serviceBadge").textContent="Service: "+(serviceVariant==="legacy"?"FFE0 legacy":"FEE7 alternate");$("serviceBadge").className="badge good";$("writerBadge").textContent="Writer: "+(writeChar?shortUuid(writeChar.uuid):"detecting");$("writerBadge").className="badge warn";setConnectedUI(true);
-    try{await send(0x05,[]);await sleep(200);}catch(e){log("Info query warning: "+e.message);}
-    await send(0x89,[0x00]);log("CONNECT handshake sent");setNotice("Bluetooth connected. Ready for a test ball.","success");
+    // Match current TableBot lifecycle: handshake first, then query firmware while idle.
+    await send(0x89,[0x00]);log("CONNECT handshake sent");await sleep(1000);
+    try{await send(0x05,[]);log("Firmware/version query sent");}catch(e){log("Info query warning: "+e.message);}
+    setNotice("Bluetooth connected. Ready for a test ball.","success");
   }catch(e){log("CONNECT ERROR: "+e.message);setConnectedUI(false);setNotice("Could not connect: "+e.message,"error");}
 }
 async function disconnectRobot(){try{stopKeepalive();if(writeChar)await send(0x99,[0x00]);}catch(e){log("Disconnect command warning: "+e.message);}try{device?.gatt?.disconnect();}catch(_){}disconnected();}
@@ -217,7 +232,7 @@ async function readInfo(){try{await send(0x05,[]);}catch(e){setNotice(e.message,
 async function handshake(){try{await send(0x89,[0x00]);}catch(e){setNotice(e.message,"error");}}
 
 function normalizeMotorData(data){if(Array.isArray(data))return data;for(const k of ["data","baseConf","base_conf"]){if(Array.isArray(data?.[k]))return data[k];}if(data&&typeof data==="object"){for(const v of Object.values(data))if(Array.isArray(v)&&v.length&&typeof v[0]==="object")return v;}throw new Error("Unrecognized motor-table JSON shape");}
-function useMotorTable(data,source){motorTable=normalizeMotorData(data);if(motorTable.length<100)throw new Error("Motor table looks incomplete");$("configBadge").textContent=`Motor table: ${motorTable.length} entries (${source})`;$("configBadge").className="badge good";renderGrid();renderSteps();}
+function useMotorTable(data,source){motorTable=normalizeMotorData(data);if(motorTable.length<100)throw new Error("Motor table looks incomplete");$("configBadge").textContent=`Motor table: ${motorTable.length} entries (${source})`;$("configBadge").className="badge good";const p=basicParams();basicSelection=basicSelection.filter(pos=>!!getMotor(p.ball,p.spin,p.power,pos));if(!basicSelection.length&&getMotor(p.ball,p.spin,p.power,8))basicSelection=[8];renderGrid();renderSteps();}
 async function loadMotorTable(){
   $("configBadge").textContent="Motor table: loading…";$("configBadge").className="badge warn";
   for(const url of MOTOR_TABLE_URLS){
@@ -228,65 +243,53 @@ async function loadMotorTable(){
   catch(e){motorTable=[];$("configBadge").textContent="Motor table: failed";$("configBadge").className="badge bad";setNotice("Motor table could not be loaded. Open this page once with Internet access and tap Reload / Cache Motor Table.","error");}
 }
 function getMotor(ball,spin,power,landarea){return motorTable.find(x=>Number(x.ball)===Number(ball)&&Number(x.spin)===Number(spin)&&Number(x.power)===Number(power)&&Number(x.landarea)===Number(landarea))||null;}
-  function normalizeMotorData(data){if(Array.isArray(data))return data;for(const k of ["data","baseConf","base_conf"]){if(Array.isArray(data?.[k]))return data[k];}if(data&&typeof data==="object"){for(const v of Object.values(data))if(Array.isArray(v)&&v.length&&typeof v[0]==="object")return v;}throw new Error("Unrecognized motor-table JSON shape");}
-function useMotorTable(data,source){motorTable=normalizeMotorData(data);if(motorTable.length<100)throw new Error("Motor table looks incomplete");$("configBadge").textContent=`Motor table: ${motorTable.length} entries (${source})`;$("configBadge").className="badge good";renderGrid();renderSteps();}
-async function loadMotorTable(){
-  $("configBadge").textContent="Motor table: loading…";$("configBadge").className="badge warn";
-  for(const url of MOTOR_TABLE_URLS){
-    try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const data=await r.json();useMotorTable(data,"online");try{localStorage.setItem(MOTOR_CACHE_KEY,JSON.stringify(data));}catch(_){}log("Motor table downloaded and cached from "+new URL(url).hostname);return;}
-    catch(e){log("Motor table source failed: "+e.message);}
-  }
-  try{const cached=localStorage.getItem(MOTOR_CACHE_KEY);if(!cached)throw new Error("No cached copy yet");useMotorTable(JSON.parse(cached),"cached");log("Using cached motor table");}
-  catch(e){motorTable=[];$("configBadge").textContent="Motor table: failed";$("configBadge").className="badge bad";setNotice("Motor table could not be loaded. Open this page once with Internet access and tap Reload / Cache Motor Table.","error");}
-}
-function getMotor(ball,spin,power,landarea){return motorTable.find(x=>Number(x.ball)===Number(ball)&&Number(x.spin)===Number(spin)&&Number(x.power)===Number(power)&&Number(x.landarea)===Number(landarea))||null;}
-
-function basicParams(){return{ball:+$("ballSel").value,spin:+$("spinSel").value,power:+$("powerSel").value,time:+$("timeRange").value,repeats:+$("repeatInput").value,mode:$("modeSel").value};}
+  function basicParams(){return{ball:+$("ballSel").value,spin:+$("spinSel").value,power:+$("powerSel").value,time:+$("timeRange").value,ballCount:Math.max(1,Math.min(200,+$("ballCountInput").value||1)),mode:$("modeSel").value};}
+function updateBallNote(){const n=$("ballNote");if(+$("ballSel").value===0){n.className="notice";n.textContent="Serve uses the community base calibration. Your robot may need serve-specific calibration; first prove Normal shots and repeat count are reliable.";}else{n.className="notice hidden";n.textContent="";}}
 function renderGrid(){
   const g=$("targetGrid");g.innerHTML="";const p=basicParams();
   for(let pos=1;pos<=15;pos++){
-    const b=document.createElement("button");b.className="cell";b.type="button";const valid=!motorTable.length||!!getMotor(p.ball,p.spin,p.power,pos),idx=basicSelection.indexOf(pos);if(idx>=0)b.classList.add("selected");if(!valid)b.classList.add("invalid");b.textContent=pos;
-    if(idx>=0&&p.mode!=="single"){const o=document.createElement("span");o.className="order";o.textContent=idx+1;b.appendChild(o);}
-    b.onclick=()=>{if(!valid){setNotice("That ball/spin/power combination has no known motor setting for this square.","error");return;}if(p.mode==="single")basicSelection=[pos];else{const i=basicSelection.indexOf(pos);if(i>=0)basicSelection.splice(i,1);else basicSelection.push(pos);}renderGrid();setNotice("");};g.appendChild(b);
+    const b=document.createElement("button");b.className="cell";b.type="button";const valid=!motorTable.length||!!getMotor(p.ball,p.spin,p.power,pos),idx=basicSelection.indexOf(pos);if(idx>=0&&valid)b.classList.add("selected");if(!valid){b.classList.add("invalid");b.disabled=true;b.title="Unavailable for this ball / spin / power combination";}b.textContent=valid?String(pos):`${pos} ×`;
+    if(idx>=0&&valid&&p.mode!=="single"){const o=document.createElement("span");o.className="order";o.textContent=idx+1;b.appendChild(o);}
+    b.onclick=()=>{if(p.mode==="single")basicSelection=[pos];else{const i=basicSelection.indexOf(pos);if(i>=0)basicSelection.splice(i,1);else basicSelection.push(pos);}renderGrid();setNotice("");};g.appendChild(b);
   }
 }
-function updateSelectionHelp(){const m=$("modeSel").value;$("selectionHelp").textContent=m==="single"?"Single target: choose one square.":m==="sequence"?"Sequence: tap squares in firing order. Small numbers show the order.":"Random: choose the squares the robot may use.";}
-["ballSel","spinSel","powerSel"].forEach(id=>$(id).onchange=()=>{basicSelection=[];renderGrid();});$("modeSel").onchange=()=>{basicSelection=[];updateSelectionHelp();renderGrid();};$("timeRange").oninput=()=>{$("timeValue").textContent=$("timeRange").value;};
+function updateSelectionHelp(){const m=$("modeSel").value;$("selectionHelp").textContent=m==="single"?"Single target: choose one square. Number of balls is exact.":m==="sequence"?"Sequence: tap valid squares in firing order. The controller uses complete sequence cycles.":"Random: choose valid squares the robot may use. The controller uses complete random cycles.";}
+["ballSel","spinSel","powerSel"].forEach(id=>$(id).onchange=()=>{basicSelection=[];renderGrid();updateBallNote();});$("modeSel").onchange=()=>{basicSelection=[];updateSelectionHelp();renderGrid();};$("timeRange").oninput=()=>{$("timeValue").textContent=$("timeRange").value;};$("ballCountInput").onchange=()=>{$("ballCountInput").value=basicParams().ballCount;};
 
 function motorBytes(c){return[c.m1speed,c.m2speed,c.xaxis,c.yaxis,c.zaxis].map(Number);}
 function addPoint(arr,cfg,{repeatDelay=1,flags=0,ballTime=8,groupSize=1,targetMode=0,orderRandom=0}={}){arr.push(...motorBytes(cfg),(repeatDelay>>8)&255,repeatDelay&255,flags&255,ballTime&255,groupSize&255,targetMode&255,orderRandom&255);}
 function trailer(arr,reps){arr.push(Math.max(1,Math.min(255,reps||1)),1,0,0);}
+function showPatternSummary(meta){lastBuildMeta=meta;const el=$("patternSummary");if(!meta){el.className="notice hidden";el.textContent="";return;}el.className="notice success";el.textContent=`Prepared: ${meta.mode}. Requested ${meta.requestedBalls} ball(s); ${meta.pointsPerCycle} point(s)/cycle; repeat byte ${meta.repeatByte}; expected ${meta.expectedBalls} ball(s).`;}
 function buildBasicPayload({testOne=false}={}){
-  if(!motorTable.length)throw new Error("Motor table is not loaded");const p=basicParams();if(!basicSelection.length)throw new Error("Choose at least one landing square");const out=[];
-  if(testOne){const c=getMotor(p.ball,p.spin,p.power,basicSelection[0]);if(!c)throw new Error("No motor configuration for the test ball");addPoint(out,c,{ballTime:p.time});trailer(out,1);return new Uint8Array(out);}
+  if(!motorTable.length)throw new Error("Motor table is not loaded");const p=basicParams();if(!basicSelection.length)throw new Error("Choose at least one valid landing square");const out=[];
+  if(testOne){const c=getMotor(p.ball,p.spin,p.power,basicSelection[0]);if(!c)throw new Error("No motor configuration for the test ball");addPoint(out,c,{ballTime:p.time});trailer(out,1);showPatternSummary({mode:"Test One Ball",requestedBalls:1,pointsPerCycle:1,repeatByte:1,expectedBalls:1});return new Uint8Array(out);}
   if(p.mode==="single"){const c=getMotor(p.ball,p.spin,p.power,basicSelection[0]);if(!c)throw new Error("No motor configuration for selected target");addPoint(out,c,{ballTime:p.time});}
   else if(p.mode==="sequence"){for(const pos of basicSelection){const c=getMotor(p.ball,p.spin,p.power,pos);if(!c)throw new Error("No motor configuration for position "+pos);addPoint(out,c,{ballTime:p.time});}}
   else{for(const pos of basicSelection){const c=getMotor(p.ball,p.spin,p.power,pos);if(!c)throw new Error("No motor configuration for position "+pos);addPoint(out,c,{flags:0x80,ballTime:p.time,groupSize:1,targetMode:2,orderRandom:1});}}
-  trailer(out,p.repeats);return new Uint8Array(out);
+  const pointsPerCycle=p.mode==="single"?1:basicSelection.length;const reps=p.mode==="single"?p.ballCount:Math.max(1,Math.ceil(p.ballCount/pointsPerCycle));const expected=reps*pointsPerCycle;trailer(out,reps);showPatternSummary({mode:`Basic ${p.mode}`,requestedBalls:p.ballCount,pointsPerCycle,repeatByte:reps,expectedBalls:expected});return new Uint8Array(out);
 }
 function buildAdvancedPayload(){
-  if(!motorTable.length)throw new Error("Motor table is not loaded");if(!advSteps.length)throw new Error("Add at least one advanced step");const out=[],shuffle=$("advOrder").value==="random";
+  if(!motorTable.length)throw new Error("Motor table is not loaded");if(!advSteps.length)throw new Error("Add at least one advanced step");const out=[],shuffle=$("advOrder").value==="random";let pointsPerCycle=0;
   for(let s=0;s<advSteps.length;s++){
-    const st=advSteps[s];if(!st.positions.length)throw new Error(`Step ${s+1} has no target`);if(st.positions.length>5)throw new Error(`Step ${s+1} has more than five targets`);const N=st.positions.length;
+    const st=advSteps[s];if(!st.positions.length)throw new Error(`Step ${s+1} has no target`);if(st.positions.length>5)throw new Error(`Step ${s+1} has more than five targets`);const N=st.positions.length;pointsPerCycle+=N;
     st.positions.forEach((pos,i)=>{const c=getMotor(st.ball,st.spin,st.power,pos);if(!c)throw new Error(`Step ${s+1}: no motor configuration for position ${pos}`);addPoint(out,c,{flags:shuffle?0x80:0,ballTime:st.time,groupSize:N,targetMode:N>1&&i===0?1:0,orderRandom:shuffle?1:0});});
   }
-  trailer(out,+$("advRepeat").value||1);return new Uint8Array(out);
+  const reps=Math.max(1,Math.min(50,+$("advRepeat").value||1));$("advRepeat").value=reps;trailer(out,reps);showPatternSummary({mode:"Advanced",requestedBalls:pointsPerCycle*reps,pointsPerCycle,repeatByte:reps,expectedBalls:pointsPerCycle*reps});return new Uint8Array(out);
 }
 
 async function preparePattern(){
-  // If our own page believes a drill is already running, stop it with the firmware-validated live stop first.
-  if(running){await send(0x03,[0x00]);running=false;stopKeepalive();await sleep(300);}
-  // TableBot protocol sequence for a new drill: 0x05 -> wait -> 0x04/02 -> wait -> PATTERN.
-  await send(0x05,[]);await sleep(300);await send(0x04,[0x02]);await sleep(250);
+  if(running){await send(0x03,[0x00]);running=false;stopKeepalive();await sleep(500);}
+  // Current TableBot start path: idle STOP with payload 00, wait, PRE 04/02, wait, PATTERN.
+  await send(0x05,[0x00]);await sleep(500);await send(0x04,[0x02]);await sleep(500);
 }
 function stopKeepalive(){if(keepaliveTimer){clearInterval(keepaliveTimer);keepaliveTimer=null;}}
 function startKeepalive(){stopKeepalive();keepaliveTimer=setInterval(async()=>{if(!running||!writeChar){stopKeepalive();return;}try{await send(0x04,[0x02]);log("Keepalive PRE sent");}catch(e){log("Keepalive warning: "+e.message);}},5000);}
-async function startPayload(payload){if(!writeChar)throw new Error("Connect to the robot first");await preparePattern();const op=$("opcodeMode").value==="98"?0x98:0x01;awaitingPatternAck=true;log(`Sending PATTERN 0x${op.toString(16)} (${payload.length} payload bytes)`);await send(op,payload);running=true;startKeepalive();}
-async function startTraining(){try{setNotice("");await startPayload(activeTab==="basic"?buildBasicPayload():buildAdvancedPayload());}catch(e){awaitingPatternAck=false;log("START ERROR: "+e.message);setNotice(e.message,"error");}}
-async function testBall(){try{if(activeTab!=="basic")throw new Error("Test One Ball is available in Basic mode");setNotice("");await startPayload(buildBasicPayload({testOne:true}));}catch(e){awaitingPatternAck=false;log("TEST ERROR: "+e.message);setNotice(e.message,"error");}}
+async function startPayload(payload){if(!writeChar)throw new Error("Connect to the robot first");await preparePattern();const op=$("opcodeMode").value==="98"?0x98:0x01;const t=transportSettings();awaitingPatternAck=true;log(`V4 PATTERN: opcode=0x${op.toString(16)}, payload=${payload.length}B, repeat=${lastBuildMeta?.repeatByte??"?"}, transport=${t.label}`);await send(op,payload);running=true;startKeepalive();}
+async function startTraining(){try{setNotice("");const payload=activeTab==="basic"?buildBasicPayload():buildAdvancedPayload();await startPayload(payload);}catch(e){awaitingPatternAck=false;log("START ERROR: "+e.message);setNotice(e.message,"error");}}
+async function testBall(){try{if(activeTab!=="basic")throw new Error("Test One Ball is available in Basic mode");setNotice("");const payload=buildBasicPayload({testOne:true});await startPayload(payload);}catch(e){awaitingPatternAck=false;log("TEST ERROR: "+e.message);setNotice(e.message,"error");}}
 async function stopRobot(){
   if(!writeChar)return;running=false;awaitingPatternAck=false;stopKeepalive();
-  try{log("STOP requested");for(let i=0;i<2;i++){await send(0x03,[0x00]);await sleep(180);}log("STOP sent");}
+  try{log("STOP requested");await send(0x03,[0x00]);log("STOP sent (0x03/00)");}
   catch(e){log("STOP ERROR: "+e.message);setNotice("STOP command failed: "+e.message,"error");}
 }
 
@@ -298,22 +301,22 @@ function renderSteps(){
     const box=document.createElement("div");box.className="step";box.innerHTML=`<div class="stephead"><div class="step-title">Step ${index+1}</div><div class="row"><button class="secondary small up">↑</button><button class="secondary small down">↓</button><button class="danger small remove">Remove</button></div></div><div class="grid3"><div><label>Ball</label><select class="sball"></select></div><div><label>Spin</label><select class="sspin"></select></div><div><label>Power</label><select class="spower"></select></div></div><div style="margin-top:8px"><label>Ball interval: <span class="stimev">${st.time}</span></label><input class="stime" type="range" min="1" max="20" value="${st.time}"></div><label style="margin-top:8px">Target(s), maximum 5</label><div class="mini-grid"></div>`;host.appendChild(box);
     const sb=box.querySelector(".sball"),ss=box.querySelector(".sspin"),sp=box.querySelector(".spower");for(const o of BALLS)sb.add(new Option(o.n,o.v));for(const o of SPINS)ss.add(new Option(o.n,o.v));for(const o of POWERS)sp.add(new Option(o.n,o.v));sb.value=st.ball;ss.value=st.spin;sp.value=st.power;
     const changed=()=>{st.ball=+sb.value;st.spin=+ss.value;st.power=+sp.value;st.positions=st.positions.filter(p=>validStepPos(st,p));renderSteps();};sb.onchange=changed;ss.onchange=changed;sp.onchange=changed;box.querySelector(".stime").oninput=e=>{st.time=+e.target.value;box.querySelector(".stimev").textContent=st.time;};box.querySelector(".remove").onclick=()=>{advSteps.splice(index,1);renderSteps();};box.querySelector(".up").onclick=()=>{if(index>0){[advSteps[index-1],advSteps[index]]=[advSteps[index],advSteps[index-1]];renderSteps();}};box.querySelector(".down").onclick=()=>{if(index<advSteps.length-1){[advSteps[index+1],advSteps[index]]=[advSteps[index],advSteps[index+1]];renderSteps();}};
-    const mg=box.querySelector(".mini-grid");for(let pos=1;pos<=15;pos++){const b=document.createElement("button");b.type="button";b.className="mini-cell";b.textContent=pos;const valid=validStepPos(st,pos),selected=st.positions.includes(pos);if(!valid)b.classList.add("invalid");if(selected)b.classList.add("selected");b.onclick=()=>{if(!valid)return;const i=st.positions.indexOf(pos);if(i>=0)st.positions.splice(i,1);else if(st.positions.length<5)st.positions.push(pos);else setNotice("An advanced step can contain at most five targets.","error");renderSteps();};mg.appendChild(b);}
+    const mg=box.querySelector(".mini-grid");for(let pos=1;pos<=15;pos++){const b=document.createElement("button");b.type="button";b.className="mini-cell";b.textContent=pos;const valid=validStepPos(st,pos),selected=st.positions.includes(pos);if(!valid){b.classList.add("invalid");b.disabled=true;b.title="Unavailable for this ball / spin / power combination";}if(selected&&valid)b.classList.add("selected");b.onclick=()=>{const i=st.positions.indexOf(pos);if(i>=0)st.positions.splice(i,1);else if(st.positions.length<5)st.positions.push(pos);else setNotice("An advanced step can contain at most five targets.","error");renderSteps();};mg.appendChild(b);}
   });
 }
-$("addStepBtn").onclick=()=>{advSteps.push(newStep());renderSteps();};advSteps=[newStep(),newStep()];advSteps[0].positions=[12];advSteps[1].positions=[14];
+$("addStepBtn").onclick=()=>{advSteps.push(newStep());renderSteps();};advSteps=[newStep()];advSteps[0].positions=[8];
 
-function serializeState(){return{version:3,tab:activeTab,basic:{...basicParams(),selection:[...basicSelection]},advanced:{repeats:+$("advRepeat").value,order:$("advOrder").value,steps:JSON.parse(JSON.stringify(advSteps))}};}
-function applyState(s){if(!s)return;if(s.basic){$("ballSel").value=s.basic.ball;$("spinSel").value=s.basic.spin;$("powerSel").value=s.basic.power;$("timeRange").value=s.basic.time;$("timeValue").textContent=s.basic.time;$("repeatInput").value=s.basic.repeats;$("modeSel").value=s.basic.mode;basicSelection=s.basic.selection||[];}if(s.advanced){$("advRepeat").value=s.advanced.repeats||10;$("advOrder").value=s.advanced.order||"fixed";advSteps=s.advanced.steps||[];}setTab(s.tab||"basic");renderGrid();renderSteps();updateSelectionHelp();}
-function loadPresets(){try{return JSON.parse(localStorage.getItem("infinityPresetsV3")||"{}");}catch(_){return{};}}
-function savePresets(p){localStorage.setItem("infinityPresetsV3",JSON.stringify(p));}
+function serializeState(){return{version:4,tab:activeTab,basic:{...basicParams(),selection:[...basicSelection]},advanced:{repeats:+$("advRepeat").value,order:$("advOrder").value,steps:JSON.parse(JSON.stringify(advSteps))}};}
+function applyState(s){if(!s)return;if(s.basic){$("ballSel").value=s.basic.ball;$("spinSel").value=s.basic.spin;$("powerSel").value=s.basic.power;$("timeRange").value=s.basic.time;$("timeValue").textContent=s.basic.time;$("ballCountInput").value=s.basic.ballCount||s.basic.repeats||20;$("modeSel").value=s.basic.mode;basicSelection=s.basic.selection||[];}if(s.advanced){$("advRepeat").value=s.advanced.repeats||10;$("advOrder").value=s.advanced.order||"fixed";advSteps=s.advanced.steps||[];}setTab(s.tab||"basic");renderGrid();renderSteps();updateSelectionHelp();updateBallNote();}
+function loadPresets(){try{return JSON.parse(localStorage.getItem("infinityPresetsV4")||localStorage.getItem("infinityPresetsV3")||"{}");}catch(_){return{};}}
+function savePresets(p){localStorage.setItem("infinityPresetsV4",JSON.stringify(p));}
 function renderPresetList(){const p=loadPresets(),host=$("presetList");host.innerHTML="";const names=Object.keys(p);if(!names.length){host.innerHTML='<div class="help">No saved presets yet.</div>';return;}for(const name of names){const r=document.createElement("div");r.className="row";r.style.marginBottom="6px";const b=document.createElement("button");b.className="secondary";b.textContent=name;b.onclick=()=>applyState(p[name]);const d=document.createElement("button");d.className="danger small";d.textContent="Delete";d.onclick=()=>{delete p[name];savePresets(p);renderPresetList();};r.append(b,d);host.appendChild(r);}}
 $("savePresetBtn").onclick=()=>{const name=$("presetName").value.trim()||"My Drill",p=loadPresets();p[name]=serializeState();savePresets(p);renderPresetList();$("presetName").value="";};
 
 function setTab(t){activeTab=t;$("basicPane").classList.toggle("hidden",t!=="basic");$("advancedPane").classList.toggle("hidden",t!=="advanced");$("basicTab").classList.toggle("active",t==="basic");$("advancedTab").classList.toggle("active",t==="advanced");$("testBtn").disabled=!writeChar||t!=="basic";}
-$("basicTab").onclick=()=>setTab("basic");$("advancedTab").onclick=()=>setTab("advanced");$("connectBtn").onclick=connectRobot;$("disconnectBtn").onclick=disconnectRobot;$("infoBtn").onclick=readInfo;$("handshakeBtn").onclick=handshake;$("preBtn").onclick=async()=>{try{await send(0x04,[0x02]);}catch(e){setNotice(e.message,"error");}};$("startBtn").onclick=startTraining;$("quickStartBtn").onclick=startTraining;$("testBtn").onclick=testBall;$("stopBtn").onclick=stopRobot;$("reloadConfigBtn").onclick=loadMotorTable;$("clearLogBtn").onclick=()=>{$("log").textContent="";};
+$("basicTab").onclick=()=>setTab("basic");$("advancedTab").onclick=()=>setTab("advanced");$("connectBtn").onclick=connectRobot;$("disconnectBtn").onclick=disconnectRobot;$("infoBtn").onclick=readInfo;$("handshakeBtn").onclick=handshake;$("preBtn").onclick=async()=>{try{await send(0x04,[0x02]);}catch(e){setNotice(e.message,"error");}};$("startBtn").onclick=startTraining;$("quickStartBtn").onclick=startTraining;$("testBtn").onclick=testBall;$("stopBtn").onclick=stopRobot;$("reloadConfigBtn").onclick=loadMotorTable;$("clearLogBtn").onclick=()=>{$("log").textContent="";};$("copyLogBtn").onclick=async()=>{const text=`Infinity Controller v4 diagnostics\nDevice: ${device?.name||"not connected"}\nService: ${serviceVariant||"—"}\nWriter: ${writeChar?shortUuid(writeChar.uuid):"—"}\nFirmware: ${firmware||"—"}\nTransport: ${transportSettings().label}\nPattern opcode: 0x${$("opcodeMode").value}\nLast pattern: ${JSON.stringify(lastBuildMeta)}\n\n${$("log").textContent}`;try{await navigator.clipboard.writeText(text);setNotice("Diagnostics copied.","success");}catch(e){setNotice("Could not copy automatically. Take a screenshot of the event log.","warn");}};
 
-renderGrid();updateSelectionHelp();renderSteps();renderPresetList();loadMotorTable();log("Infinity Controller v3 loaded.");
+renderGrid();updateSelectionHelp();updateBallNote();renderSteps();renderPresetList();loadMotorTable();log("Infinity Controller v4 loaded.");
 </script>
 </body>
 </html>
